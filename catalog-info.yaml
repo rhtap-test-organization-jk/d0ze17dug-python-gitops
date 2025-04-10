@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: d0ze17dug-python-gitops
+  description: This is GitOps manifest for d0ze17dug-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=d0ze17dug-python
+    backstage.io/kubernetes-id: d0ze17dug-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: d0ze17dug-python-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:d0ze17dug-python
